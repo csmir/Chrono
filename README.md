@@ -103,7 +103,7 @@ Chrono classes work perfectly as services and can be injected through constructo
 
       public ChronoExample()
       {
-          // create new instances of both available chrono classes. There are no static fields in either of these classes.
+          // Create new instances of both available chrono classes. There are no static fields in either of these classes.
           _timeHandler = new(InvokeType.Global);
           _timeParser = new();
       }
@@ -112,7 +112,7 @@ Chrono classes work perfectly as services and can be injected through constructo
       // '/gettime 10 days, 5 hours and 16 seconds'
       public void HandleTimeInputExample(string command)
       {
-          // remove the command name & prefix.
+          // Remove the command name & prefix.
           command = command.Remove(0, 9);
 
           // GetFromString returns a bool, true if 'command' included any valid time, false if it did not.
@@ -131,7 +131,7 @@ Chrono classes work perfectly as services and can be injected through constructo
 
       private async Task HourReceived(TimeEventArgs arg)
       {
-          // do whatever you want to handle here.
+          // Do whatever you want to handle here.
       }
   }
 ```
