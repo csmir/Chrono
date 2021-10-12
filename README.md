@@ -3,7 +3,9 @@ A C# Time parser &amp; time event handler.
 
 ## 📩 How to install
 
-Chrono is a drop and go assembly and can easily be installed from [here](https://github.com/Rozen4334/Chrono/releases/) or through NuGet.
+Chrono is a drop and go assembly and can easily be installed from [here](https://github.com/Rozen4334/Chrono/releases/) or through [NuGet](https://www.nuget.org/packages/ChronoExtensions/1.0.0):
+
+- ` PM> Install-Package ChronoExtensions -Version 1.0.0 `
 
 ## 👨‍💻 Applications
 
@@ -13,7 +15,7 @@ Chrono comes with 2 classes:
 - TimeParser
 - TimeEvents
 
-These classes are both non-static and need to be initialized by `new`. Uses for these classes namely appear in functions that require a timer or require the time to be retrieved from a string.
+These classes are both non-static and need to be initialized by ` new `. Uses for these classes namely appear in functions that require a timer or require the time to be retrieved from a string.
 
 ## 💉 Dependency injections
 
