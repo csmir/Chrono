@@ -77,19 +77,20 @@ namespace Chrono
 
         private void Elapsed(object sender, ElapsedEventArgs args)
         {
-            var time = _time;
-            _time = (_type == InvokeType.Global)
+            var old = _time;
+            var newtime = (_type == InvokeType.Global)
                 ? DateTime.UtcNow
                 : DateTime.Now;
+            _time = newtime;
             _ = Task.Run( async () =>
            {
-               if (time.Second != args.SignalTime.Second)
+               if (old.Second != newtime.Second)
                    await RaiseTimePassed(RaiseType.Second, args, DateTime.UtcNow, DateTime.Now);
-               if (time.Minute != args.SignalTime.Minute)
+               if (old.Minute != newtime.Second)
                    await RaiseTimePassed(RaiseType.Minute, args, DateTime.UtcNow, DateTime.Now);
-               if (time.Hour != args.SignalTime.Hour)
+               if (old.Hour != newtime.Second)
                    await RaiseTimePassed(RaiseType.Hour, args, DateTime.UtcNow, DateTime.Now);
-               if (time.Day != args.SignalTime.Day)
+               if (old.Day != newtime.Second)
                    await RaiseTimePassed(RaiseType.Day, args, DateTime.UtcNow, DateTime.Now);
            });
         }
@@ -106,18 +107,21 @@ namespace Chrono
             switch (type)
             {
                 case RaiseType.Second:
-                    await OnSecondPassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys));
+                    await (OnSecondPassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys)) 
+                        ?? Task.CompletedTask);
                     return;
                 case RaiseType.Minute:
-                    await OnMinutePassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys));
+                    await (OnMinutePassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys)) 
+                        ?? Task.CompletedTask); 
                     return;
                 case RaiseType.Hour:
-                    await OnHourPassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys));
+                    await (OnHourPassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys)) 
+                        ?? Task.CompletedTask);
                     return;
                 case RaiseType.Day:
-                    await OnDayPassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys));
+                    await (OnDayPassed?.Invoke(new TimeEventArgs(_timer, args, utc, sys)) 
+                        ?? Task.CompletedTask);
                     return;
-
             }
         }
     }

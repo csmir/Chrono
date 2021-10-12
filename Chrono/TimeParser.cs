@@ -10,13 +10,8 @@ namespace Chrono
     /// </summary>
     public class TimeParser
     {
-        // The delegate to match result parameters to valid methods.
         private delegate TimeSpan CallBackDelegate(string match);
-
-        // The dictionary to call valid callback entries by the string request.
         private readonly Dictionary<string, CallBackDelegate> _callBackResult = new();
-
-        // The regex to return valid matches from.
         private readonly Regex _regex = new(@"(\d*)\s*([a-zA-Z]*)\s*(?:and|,)?\s*");
 
         /// <summary>
