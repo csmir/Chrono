@@ -1,12 +1,6 @@
 # ⏳⌚ Chrono
 A C# Time parser &amp; time event handler.
 
-### Table of contents:
-- [How to install](#how-to-install)
-- [Applications](#applications)
-- [Dependency injection](#dependency-injection)
-- [Examples](#examples)
-
 ## 📩 How to install
 
 Chrono is a drop and go assembly and can easily be installed from [here](https://github.com/Rozen4334/Chrono/releases/) or through NuGet.
