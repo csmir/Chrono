@@ -13,18 +13,17 @@ Chrono is a drop and go assembly and can easily be installed from [here](https:/
 
 ## 👨‍💻 Applications
 
+Made to make handling time easier, Chrono is specifically designed to make handling time in applications easier and avoiding additional timer setups.
+
 Chrono comes with 2 classes: 
 - TimeParser
 - TimeEvents
-These classes are both non-static and need to be initialized by `new`. 
-Uses for these classes namely appear in functions that require a timer or require the time to be retrieved from a string.
 
-Made to make handling time easier, its specifically designed to make handling time in applications easier and avoiding additional timer setups.
+These classes are both non-static and need to be initialized by `new`. Uses for these classes namely appear in functions that require a timer or require the time to be retrieved from a string.
 
 ## 💉 Dependency injections
 
-Chrono classes work perfectly as services and can be injected through constructors. 
-To assign events, a call to the service is required as the constructor will not assign anything until called.
+Chrono classes work perfectly as services and can be injected through constructors. To assign events, a call to the service is required as the constructor will not assign anything until called.
 
 ### Example of implementing Chrono classes as services:
 ```cs
