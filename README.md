@@ -57,7 +57,7 @@ Chrono classes work perfectly as services and can be injected through constructo
   {
       private readonly TimeEvents _timeHandler;
 
-      // Constructs the class. The ConfigureService method recognizes the TimeEvents class while building and injects it by itself.
+      // Constructs the class. The ConfigureServices method recognizes the TimeEvents class while building and injects it by itself.
       public MyService(TimeEvents eventHandler)
           => _timeHandler = eventHandler;
 
@@ -103,7 +103,7 @@ Chrono classes work perfectly as services and can be injected through constructo
 
       public ChronoExample()
       {
-          // Create new instances of both available chrono classes. There are no static fields in either of these classes.
+          // Create new instances of both available Chrono classes. There are no static fields in either of these classes.
           _timeHandler = new(InvokeType.Global);
           _timeParser = new();
       }
