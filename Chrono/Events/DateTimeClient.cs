@@ -37,8 +37,8 @@ namespace Chrono
         public DateTimeClient(OffsetOptions type = OffsetOptions.Global)
         {
             _type = type;
-            _time = _type.HasFlag(OffsetOptions.Global) 
-                ? DateTime.UtcNow 
+            _time = _type.HasFlag(OffsetOptions.Global)
+                ? DateTime.UtcNow
                 : DateTime.Now;
 
             _timer = new(1000)
@@ -106,19 +106,19 @@ namespace Chrono
             switch (type)
             {
                 case RaiseType.Second:
-                    await (SecondPassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys)) 
+                    await (SecondPassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys))
                         ?? Task.CompletedTask);
                     return;
                 case RaiseType.Minute:
-                    await (MinutePassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys)) 
-                        ?? Task.CompletedTask); 
+                    await (MinutePassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys))
+                        ?? Task.CompletedTask);
                     return;
                 case RaiseType.Hour:
-                    await (HourPassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys)) 
+                    await (HourPassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys))
                         ?? Task.CompletedTask);
                     return;
                 case RaiseType.Day:
-                    await (DayPassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys)) 
+                    await (DayPassed?.Invoke(new DateTimeEventArgs(_timer, args, utc, sys))
                         ?? Task.CompletedTask);
                     return;
             }
