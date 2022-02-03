@@ -1,9 +1,6 @@
 ﻿namespace Chrono
 {
-    /// <summary>
-    ///     To invoke the <see cref="TimeEvents"/> instance on UTC time or system time.
-    /// </summary>
-    public enum InvokeType
+    public enum OffsetOptions
     {
         /// <summary>
         ///     Invokes on system time.

@@ -1,7 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Rozen4334</Authors>
+	<Version>2.0</Version>
+	<AssemblyVersion>2.0.0</AssemblyVersion>
+	<FileVersion>2.0.0.1</FileVersion>
+	  
+    <PackageProjectUrl>https://github.com/Rozen4334/Chrono</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Rozen4334/Chrono</RepositoryUrl>
+	  
+    <PackageReleaseNotes>Release 2.0, For .NET5+</PackageReleaseNotes>
+    <PackageTags>Extension, Time</PackageTags>
+    <Description>Made to make handling time easier, Chrono is specifically designed to make handling time in applications easier and avoiding additional timer setups.</Description>
+    <NeutralLanguage>en</NeutralLanguage>
+	  
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ChronoExtensions</PackageId>
+	  
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 </Project>

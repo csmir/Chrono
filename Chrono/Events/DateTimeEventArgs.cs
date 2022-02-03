@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace Chrono
 {
-    public class TimeEventArgs
+    public class DateTimeEventArgs
     {
         /// <summary>
         ///     The UTC time of this raised event.
@@ -26,13 +26,13 @@ namespace Chrono
         public readonly ElapsedEventArgs TimerElapsedArgs;
 
         /// <summary>
-        /// Constructs a new type of <see cref="TimeEventArgs"/> with provided entries.
+        /// Constructs a new type of <see cref="DateTimeEventArgs"/> with provided entries.
         /// </summary>
         /// <param name="globalTime"></param>
         /// <param name="systemTime"></param>
         /// <param name="timer"></param>
         /// <param name="args"></param>
-        public TimeEventArgs(Timer timer, ElapsedEventArgs args, DateTime? globalTime = null, DateTime? systemTime = null)
+        public DateTimeEventArgs(Timer timer, ElapsedEventArgs args, DateTime? globalTime = null, DateTime? systemTime = null)
         {
             GlobalTime = globalTime ?? DateTime.UtcNow;
             SystemTime = systemTime ?? DateTime.Now;
